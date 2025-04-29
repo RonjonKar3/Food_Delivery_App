@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Signup</h1>
+  </header>
+
+  <div class="profile-container">
+    <form id="signup-form" class="profile-card">
+      <input type="text" placeholder="Name" id="name" required>
+      <input type="email" placeholder="Email" id="email" required>
+      <input type="tel" placeholder="Mobile Number" id="mobile" required>
+      <input type="text" placeholder="Address" id="address" required>
+      <button type="submit">Signup</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      const address = document.getElementById('address').value;
+
+      // Save to localStorage
+      localStorage.setItem('user', JSON.stringify({ name, email, mobile, address }));
+
+      // Redirect to profile page
+      window.location.href = 'profile.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Restaurants</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🍽️ Food Panda</div>
+        <div class="header-actions">
+            <a href="#" class="cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+            <a href="#" class="account">👤 Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="#">My Orders</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>All Restaurants</h2>
+        <section id="all-restaurants" class="restaurant-grid">
+            <!-- Restaurants will be injected here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Food Delivery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const restaurants = [
+                { name: "Kacchi Vai", image: "Restaurant_Image/image1.jpg", rating: "4.4" },
+                { name: "Pizza Burg", image: "Restaurant_Image/image2.jpg", rating: "4.9" },
+                { name: "Sharma Kings", image: "Restaurant_Image/image3.jpg", rating: "4.8" },
+                { name: "Tasty Treats", image: "Restaurant_Image/image4.jpg", rating: "4.6" },
+                { name: "Chilox", image: "Restaurant_Image/image5.jpg", rating: "4.7" },
+                { name: "Grill Master", image: "Restaurant_Image/image6.jpg", rating: "4.5" },
+                { name: "Tandoori Nights", image: "Restaurant_Image/image7.jpg", rating: "4.3" },
+                { name: "Pasta Palace", image: "Restaurant_Image/image8.jpg", rating: "4.6" },
+                { name: "Desi Treats", image: "Restaurant_Image/image9.jpg", rating: "4.2" }
+            ];
+
+            const allRestaurantSection = document.getElementById("all-restaurants");
+            restaurants.forEach(resto => {
+                const card = document.createElement("div");
+                card.className = "restaurant-card";
+                card.innerHTML = `
+                    <a href="${resto.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, '')}.html">
+                        <img src="${resto.image}" alt="${resto.name}">
+                        <h3>${resto.name}</h3>
+                        <p>⭐ ${resto.rating}</p>
+                    </a>
+                `;
+
+                allRestaurantSection.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

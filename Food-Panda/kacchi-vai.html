@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kacchi Vai</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🍽️ Food Delivery</div>
+        <div class="header-actions">
+            <a href="#" class="cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+            <a href="#" class="account">👤 Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="#">My Orders</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Kacchi Vai</h2>
+
+        <!-- Restaurant Details -->
+        <section class="restaurant-detail">
+            <img src="Restaurant_Image/image1.jpg" alt="Kacchi Vai">
+            <p>⭐ Rating: 4.4</p>
+            <p>Welcome to Kacchi Vai! Enjoy delicious home-style meals with a variety of traditional dishes.</p>
+            <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+            <p><strong>Contact:</strong> 123-456-7890</p>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="food-menu-section">
+            <h3>Biriyani</h3>
+            <div class="food-menu">
+                <div class="food-item">
+                    <img src="Restaurant_Image/food1.jpg" alt="Mutton Biryani">
+                    <div class="food-info">
+                        <h4>Mutton Biryani</h4>
+                        <p>Price: $15</p>
+                        <button onclick="addToCart('Mutton Biryani', 15)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="Restaurant_Image/food2.jpg" alt="Chicken Biryani">
+                    <div class="food-info">
+                        <h4>Chicken Biryani</h4>
+                        <p>Price: $12</p>
+                        <button onclick="addToCart('Chicken Biryani', 12)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="Restaurant_Image/food3.jpg" alt="Beef Biryani">
+                    <div class="food-info">
+                        <h4>Beef Biryani</h4>
+                        <p>Price: $14</p>
+                        <button onclick="addToCart('Beef Biryani', 14)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Dessert</h3>
+            <div class="food-menu">
+                <div class="food-item">
+                    <img src="Restaurant_Image/food4.jpg" alt="Lacchi">
+                    <div class="food-info">
+                        <h4>Lacchi</h4>
+                        <p>Price: $5</p>
+                        <button onclick="addToCart('Lacchi', 5)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="Restaurant_Image/food5.jpg" alt="Firni">
+                    <div class="food-info">
+                        <h4>Firni</h4>
+                        <p>Price: $6</p>
+                        <button onclick="addToCart('Firni', 6)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img src="Restaurant_Image/food6.jpg" alt="Borhani">
+                    <div class="food-info">
+                        <h4>Borhani</h4>
+                        <p>Price: $4</p>
+                        <button onclick="addToCart('Borhani', 4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="cart-section">
+            <h3>Your Cart</h3>
+            <ul id="cart-items" class="cart-items"></ul>
+            <p class="total-price">Total: $<span id="total-price">0</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Food Delivery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const cart = [];
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const totalPrice = document.getElementById("total-price");
+
+            cartItems.innerHTML = "";
+            let total = 0;
+            cart.forEach(({ item, price }) => {
+                const li = document.createElement("li");
+                li.textContent = `${item} - $${price}`;
+                cartItems.appendChild(li);
+                total += price;
+            });
+
+            totalPrice.textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            alert("Thank you for your order!");
+            cart.length = 0;
+            updateCart();
+        }
+    </script>
+</body>
+</html>

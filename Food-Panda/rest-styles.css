@@ -1,0 +1,238 @@
+/* Basic styles for the page */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;  /* Soft background */
+    color: #333;
+}
+
+/* Centering content and adding padding */
+main {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h2 {
+    color: #d32f2f;  /* Dark red for branding */
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Restaurant Details */
+.restaurant-detail {
+    background-color: #ffebee;  /* Light red background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.restaurant-detail img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-detail p {
+    color: #444;
+    font-size: 1.1em;
+}
+
+/* Navigation Bar */
+nav {
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #d32f2f;  /* Dark red navbar */
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 1.2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    background-color: #b71c1c;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff5252;  /* Lighter red hover */
+}
+
+/* Styling food groups */
+.food-group {
+    margin-top: 30px;
+}
+
+.food-group h4 {
+    font-size: 2em;
+    color: #b71c1c;  /* Deep red for category headers */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Food item styling */
+.food-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.food-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.food-item div h4 {
+    font-size: 1.4em;
+    color: #333;
+}
+
+.food-item div p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background-color: #d32f2f;  /* Dark red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+/* Cart styles */
+.cart {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #ffebee;  /* Light red cart background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #d32f2f;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    margin-bottom: 12px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #b71c1c;
+    text-align: right;
+}
+
+/* Home Page */
+.home-page {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffebee;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-page p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #d32f2f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #b71c1c;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .food-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .food-item img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .cart {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .total-price {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
